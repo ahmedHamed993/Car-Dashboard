@@ -34,4 +34,4 @@ https://car-dashboard-orcin.vercel.app/booking
 
 ------------------------------
 __NOTE__
-__make notification icon to toggle between themes__
+_make notification icon to toggle between themes_
