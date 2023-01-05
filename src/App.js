@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useEffect, useState} from "react";
+import {Routes, Route} from "react-router-dom";
+//  pages 
+import Home from "./pages/Home";
+import Booking from "./pages/Booking";
+// components 
+import Header from "./components/Header";
+import SideNav from "./components/SideNav";
+// get context states 
+import { useStateContext } from "./context/ContextProvider";
 function App() {
+  const {theme, sideActive, setSideActive} = useStateContext();
+  const [windowWidth , setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(()=>{
+
+    const handleWidth = ()=>{
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener("resize",handleWidth);
+    windowWidth < 768 ? setSideActive(false) : setSideActive(true);
+  
+    return ()=> window.removeEventListener("resize",handleWidth);
+  },[window.innerWidth])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`h-screen flex ${theme =='light'?'':'dark'} relative`}>
+
+      { sideActive && <SideNav /> }
+      {/* main header container  */}
+      <div className='h-screen w-full'>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+        </Routes>
+      </div>
+
     </div>
   );
 }
