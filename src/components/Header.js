@@ -22,8 +22,8 @@ const Header = () => {
       }
     }
     handleResizing();
-    window.addEventListener("resize", handleResizing);
-    return ()=> window.removeEventListener("resize", handleResizing);
+    // window.addEventListener("resize", handleResizing);
+    // return ()=> window.removeEventListener("resize", handleResizing);
   },[window.innerWidth])
   return (
     <div className="w-full dark:bg-gray-900 h-[72px]">
