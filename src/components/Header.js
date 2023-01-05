@@ -38,7 +38,12 @@ const Header = () => {
               <button  className=' p-1 rounded-full' onClick={()=>setSearchOn( prev=> !prev)}>
                 <img src={SearchIcon} alt="search" />
               </button>
-              <input type="text" name="search-value" placeholder='Search or Type' className={`focus:outline-none bg-transparent  ${searchOn ? "w-[250px] p-1":'w-0 p-0'} transition-width`} />
+              <input 
+                type="text" 
+                name="search-value" 
+                placeholder='Search' 
+                className={`focus:outline-none bg-transparent  transition-width  ${searchOn ? "w-[100px] md:w-[250px] p-1":'w-0 p-0'}`} 
+              />
             </div>
           </div>
           {/* user profile and notifaction icons  */}
