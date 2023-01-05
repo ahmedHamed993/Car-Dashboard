@@ -24,6 +24,7 @@ function App() {
     const handleWidth = ()=>{
       setWindowWidth(window.innerWidth);
     }
+    handleWidth();
     window.addEventListener("resize",handleWidth);
     windowWidth < 768 ? setSideActive(false) : setSideActive(true);
   

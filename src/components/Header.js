@@ -21,6 +21,7 @@ const Header = () => {
         setSearchOn(true);
       }
     }
+    handleResizing();
     window.addEventListener("resize", handleResizing);
     return ()=> window.removeEventListener("resize", handleResizing);
   },[window.innerWidth])
