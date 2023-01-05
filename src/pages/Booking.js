@@ -9,7 +9,7 @@ const Booking = () => {
         <div className='flex flex-col gap-4'>
           <h1 className='text-2xl font-semibold text-gray-900 dark:text-gray-50'>Booking</h1>
           <BookingFilter />
-          <div className="flex justify-start items-center flex-wrap gap-3">
+          <div className="flex justify-center  items-center flex-wrap gap-3">
             {
               bookingCars.map(item => <BookingCarCard item={item} ke={item.id} />)
             }
