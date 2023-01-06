@@ -3,7 +3,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement
 import { Line } from 'react-chartjs-2';
 import { useStateContext } from '../context/ContextProvider';
 const LineChart = () => {
-  const {theme} = useStateContext();
+  // const {theme} = useStateContext();
   ChartJS.register( CategoryScale, LinearScale, LineElement, PointElement, Filler, Tooltip);
   const options = {
     responsive: true,
@@ -39,6 +39,7 @@ const LineChart = () => {
         borderColor: '#FBBF24',
         pointBackgroundColor:"#F59E0B",
         pointHoverBorderColor:"#D97706",
+        tension:.5,
       }
     ],
   };
